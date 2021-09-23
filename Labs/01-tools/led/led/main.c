@@ -20,7 +20,11 @@
  * directives. This is a common mistake.
  */
 #define LED_GREEN   PB5 // AVR pin where green LED is connected
-#define SHORT_DELAY 250 // Delay in milliseconds
+#define SHORT_DELAY 250 // Delay between parts of the same letter   1 unit
+#define DELAY       750 // Delay between letters                    3 units
+#define LONG_DELAY  1750// Delay between words                      7 units
+#define DOT         250 // Delay of dot signal                      1 unit
+#define COMMA       750 // Delay of comma signal                    3 units
 #ifndef F_CPU           // Preprocessor directive allows for conditional
                         // compilation. The #ifndef means "if not defined".
 # define F_CPU 16000000 // CPU frequency in Hz required for delay
@@ -53,11 +57,88 @@ int main(void)
     while (1)
     {
         // Pause several milliseconds
-        _delay_ms(SHORT_DELAY);
+        _delay_ms(DELAY);
 
         // Invert LED in Data Register
         // PORTB = PORTB xor 0010 0000
-        PORTB = PORTB ^ (1<<LED_GREEN);
+        PORTB = PORTB ^ (1<<LED_GREEN);     //on
+                                                    //start of D 
+        
+        _delay_ms(COMMA);                       // comma
+
+        PORTB = PORTB ^ (1<<LED_GREEN);     //off
+        
+        _delay_ms(SHORT_DELAY);
+        
+        PORTB = PORTB ^ (1<<LED_GREEN);     //on
+                                            
+                                                // dot 
+        _delay_ms(DOT);
+        
+        PORTB = PORTB ^ (1<<LED_GREEN);     //off
+        
+        _delay_ms(SHORT_DELAY);
+        
+        PORTB = PORTB ^ (1<<LED_GREEN);     //on
+        
+        _delay_ms(DOT);                         //dot
+        
+        PORTB = PORTB ^ (1<<LED_GREEN);     //off
+        
+        _delay_ms(DELAY);                           //end of D
+        
+        PORTB = PORTB ^ (1<<LED_GREEN);     //on
+                                                    //start of E
+                                                
+        _delay_ms(DOT);                         //dot
+        
+        PORTB = PORTB ^ (1<<LED_GREEN);     //off
+       
+       _delay_ms(DELAY);                            //End of E
+       
+       PORTB = PORTB ^ (1<<LED_GREEN);     //on
+                                                    //start of 2
+       _delay_ms(DOT);                         //dot
+       
+       PORTB = PORTB ^ (1<<LED_GREEN);     //off
+                              
+       _delay_ms(SHORT_DELAY);
+       
+       PORTB = PORTB ^ (1<<LED_GREEN);     //on
+       
+       _delay_ms(DOT);                         //dot
+       
+       PORTB = PORTB ^ (1<<LED_GREEN);     //off
+       
+       _delay_ms(SHORT_DELAY);
+       
+       PORTB = PORTB ^ (1<<LED_GREEN);     //on
+       
+       _delay_ms(COMMA);                       // comma
+
+       PORTB = PORTB ^ (1<<LED_GREEN);     //off
+       
+       _delay_ms(SHORT_DELAY);
+       
+       PORTB = PORTB ^ (1<<LED_GREEN);     //on
+       
+       _delay_ms(COMMA);                       // comma
+
+       PORTB = PORTB ^ (1<<LED_GREEN);     //off
+       
+       _delay_ms(SHORT_DELAY);
+       
+       PORTB = PORTB ^ (1<<LED_GREEN);     //on
+       
+       _delay_ms(COMMA);                       // comma
+
+       PORTB = PORTB ^ (1<<LED_GREEN);     //off
+       
+       _delay_ms(LONG_DELAY);
+       
+       
+       
+       
     }
 
     // Will never reach this
