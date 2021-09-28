@@ -30,8 +30,22 @@ Link to your `Digital-electronics-2` GitHub repository:
 1. Listing of C code with syntax highlighting which repeats one "dot" and one "comma" on a LED:
 
 ```c
+#define LED_GREEN   PB5 // AVR pin where green LED is connected
+#define SHORT_DELAY 250 // Delay between parts of the same letter   1 unit
+#define DELAY       750 // Delay between letters                    3 units
+#define LONG_DELAY  1750// Delay between words                      7 units
+#define DOT         250 // Delay of dot signal                      1 unit
+#define COMMA       750 // Delay of comma signal                    3 units
+#ifndef F_CPU           // Preprocessor directive allows for conditional
+                        // compilation. The #ifndef means "if not defined".
+# define F_CPU 16000000 // CPU frequency in Hz required for delay
+#endif
+
+#include <util/delay.h> // Functions for busy-wait delay loops
+#include <avr/io.h>     // AVR device-specific IO definitions
+
 int main(void)
-{
+{   
     // Set pin as output in Data Direction Register
     // DDRB = DDRB or 0010 0000
     DDRB = DDRB | (1<<LED_GREEN);
