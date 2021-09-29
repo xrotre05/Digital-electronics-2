@@ -3,7 +3,10 @@
 ## Preparation tasks (done before the lab at home)
 
 1. Draw two basic ways to connect a LED to the output pin of the microcontroller: LED active-low, LED active-high.
-![LED Scheme](LED scheme.PNG)
+
+&nbsp
+![LED Scheme](LED_scheme.PNG)
+&nbsp
 
 2. [Calculate LED resistor value](https://electronicsclub.info/leds.htm) for typical red and blue LEDs.
 
@@ -17,4 +20,7 @@
 
 
 3. Draw the basic ways to connect a push button to the microcontroller input pin: button active-low, button active-high.
-![Button Scheme](Button scheme.PNG)
+
+&nbsp
+![Button Scheme](Button_scheme.PNG)
+&nbsp
