@@ -29,16 +29,16 @@
 | **DDRB** | **Description** |
 | :-: | :-- |
 | 0 | Input pin |
-| 1 | |
+| 1 | Output pin |
 
 | **PORTB** | **Description** |
 | :-: | :-- |
 | 0 | Output low value |
-| 1 | |
+| 1 | Output High value |
 
 | **DDRB** | **PORTB** | **Direction** | **Internal pull-up resistor** | **Description** |
 | :-: | :-: | :-: | :-: | :-- |
-| 0 | 0 | input | no | Tri-state, high-impedance |
-| 0 | 1 | | | |
-| 1 | 0 | | | |
-| 1 | 1 | | | |
+| 0 | 0 | Input | no | Tri-state, high-impedance |
+| 0 | 1 | Input | Yes | Pxn will source current if ext. pulled low. |
+| 1 | 0 | Output | no | Output Low (Sink) |
+| 1 | 1 | Output | no | Output High (Source) |
