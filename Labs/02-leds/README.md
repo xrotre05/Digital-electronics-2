@@ -24,3 +24,21 @@
 
 ![Button Scheme](Button_scheme.PNG)
 
+## Part 2: Active-low and active-high LEDs
+
+| **DDRB** | **Description** |
+| :-: | :-- |
+| 0 | Input pin |
+| 1 | |
+
+| **PORTB** | **Description** |
+| :-: | :-- |
+| 0 | Output low value |
+| 1 | |
+
+| **DDRB** | **PORTB** | **Direction** | **Internal pull-up resistor** | **Description** |
+| :-: | :-: | :-: | :-: | :-- |
+| 0 | 0 | input | no | Tri-state, high-impedance |
+| 0 | 1 | | | |
+| 1 | 0 | | | |
+| 1 | 1 | | | |
