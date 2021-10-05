@@ -35,18 +35,24 @@ int main(void)
     // Set pin as output in Data Direction Register...
     DDRB = DDRB | (1<<LED_GREEN);
     // ...and turn LED off in Data Register
-    PORTB = PORTB & ~(1<<LED_GREEN);
+    PORTB = PORTB & ~(1<<LED_GREEN); 
+    // Turn LED on
+    PORTB = PORTB ^ (1<<LED_INT); 
 
     // Configure the second LED at port C
-    // WRITE YOUR CODE HERE
+    DDRC = DDRC | (1<<LED_EXT);
+    
+    PORTC = PORTC | (1<<LED_EXT);
 
     // Infinite loop
     while (1)
     {
         // Pause several milliseconds
         _delay_ms(BLINK_DELAY);
-
-        // WRITE YOUR CODE HERE
+        
+        // Turns state of both leds 
+        PORTB = PORTB ^ (1<<LED_INT); 
+        PORTC = PORTC ^ (1<<LED_EXT);
     }
 
     // Will never reach this
