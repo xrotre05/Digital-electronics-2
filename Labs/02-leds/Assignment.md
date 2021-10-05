@@ -1,8 +1,8 @@
-# Lab 2: YOUR_FIRSTNAME FAMILYNAME
+# Lab 2: Rotrekl
 
 Link to your `Digital-electronics-2` GitHub repository:
 
-   [https://github.com/...](https://github.com/...)
+   [https://github.com/xrotre05/Digital-electronics-2](https://github.com/xrotre05/Digital-electronics-2)
 
 
 ### Active-low and active-high LEDs
@@ -12,19 +12,19 @@ Link to your `Digital-electronics-2` GitHub repository:
 | **DDRB** | **Description** |
 | :-: | :-- |
 | 0 | Input pin |
-| 1 | |
+| 1 | Output pin |
 
 | **PORTB** | **Description** |
 | :-: | :-- |
 | 0 | Output low value |
-| 1 | |
+| 1 | Output High value |
 
 | **DDRB** | **PORTB** | **Direction** | **Internal pull-up resistor** | **Description** |
 | :-: | :-: | :-: | :-: | :-- |
-| 0 | 0 | input | no | Tri-state, high-impedance |
-| 0 | 1 | | | |
-| 1 | 0 | | | |
-| 1 | 1 | | | |
+| 0 | 0 | Input | no | Tri-state, high-impedance |
+| 0 | 1 | Input | Yes | Pxn will source current if ext. pulled low. |
+| 1 | 0 | Output | no | Output Low (Sink) |
+| 1 | 1 | Output | no | Output High (Source) |
 
 2. Part of the C code listing with syntax highlighting, which blinks alternately with a pair of LEDs; let one LED is connected to port B and the other to port C:
 
