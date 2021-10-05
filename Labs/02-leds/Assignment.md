@@ -76,11 +76,13 @@ int main(void)
         // Pause several milliseconds
         _delay_ms(BLINK_DELAY);
 
+        //loop when PIN PD2 is 0
         if (bit_is_clear(PIND, 2))
         {
-        
+        //short delay
         _delay_ms(SHORT_DELAY);
-
+        
+        //switch both LEDs
         PORTB = PORTB ^ (1<<LED_INT);
         PORTC = PORTC ^ (1<<LED_EXT);
     }
