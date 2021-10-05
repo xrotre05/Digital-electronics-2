@@ -67,7 +67,8 @@ int main(void)
 
 ```c
     // Configure Push button at port D and enable internal pull-up resistor
-    // WRITE YOUR CODE HERE
+    DDRD = DDRD & ~(1<<BUTTON);  //set DDRD PD2 to 0
+    PORTD = PORTD | (1<<BUTTON); //set PORT PD2 to 1
 
     // Infinite loop
     while (1)
@@ -75,7 +76,13 @@ int main(void)
         // Pause several milliseconds
         _delay_ms(BLINK_DELAY);
 
-        // WRITE YOUR CODE HERE
+        if (bit_is_clear(PIND, 2))
+        {
+        
+        _delay_ms(SHORT_DELAY);
+
+        PORTB = PORTB ^ (1<<LED_INT);
+        PORTC = PORTC ^ (1<<LED_EXT);
     }
 ```
 
