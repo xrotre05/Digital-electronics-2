@@ -1,8 +1,8 @@
-# Lab 3: YOUR_FIRSTNAME FAMILYNAME
+# Lab 3: Rotrekl 
 
 Link to your `Digital-electronics-2` GitHub repository:
 
-   [https://github.com/...](https://github.com/...)
+   [https://github.com/xrotre05/Digital-electronics-2/](https://github.com/xrotre05/Digital-electronics-2/)
 
 
 ### Data types in C
