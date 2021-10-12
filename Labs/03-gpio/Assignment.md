@@ -29,7 +29,7 @@ Link to your `Digital-electronics-2` GitHub repository:
 
 ```c
     // Configure Push button at port D and enable internal pull-up resistor
-    // WRITE YOUR CODE HERE
+    GPIO_config_input_pullup(&DDRD, BUTTON)  //#define BUTTON   PD2
 
     // Infinite loop
     while (1)
@@ -37,7 +37,19 @@ Link to your `Digital-electronics-2` GitHub repository:
         // Pause several milliseconds
         _delay_ms(BLINK_DELAY);
 
-        // WRITE YOUR CODE HERE
+        //loop when PIN PD2 is 0
+        if (GPIO_read(&DDRD, BUTTON)) 
+        { 
+           //short delay 
+           _delay_ms(SHORT_DELAY); 
+
+           //switch both LEDs 
+           GPIO_toggle(&PORTB, LED_INT);
+           GPIO_toggle(&PORTC, LED_EXT);
+        }
+        
+        
+        
     }
 ```
 
