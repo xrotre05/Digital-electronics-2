@@ -16,14 +16,14 @@ Link to your `Digital-electronics-2` GitHub repository:
 | `uint16_t` | 16 | 0, ..., 65 535 | Unsigned 16-bit integer |
 | `int16_t`  | 16 | -32 768, ..., 32 767 | Signed 16-bit integer |
 | `float`    | 32 | -3.4e+38, ..., 3.4e+38 | Single-precision floating-point |
-| `void`     | 0 | none | no value |
+| `void`     | 0 | None | No value |
 
 
 ### GPIO library
 
 1. In your words, describe the difference between the declaration and the definition of the function in C.
-   * Function declaration
-   * Function definition
+   * Function declaration - You just declare there is something with name and its type
+   * Function definition - You provide all of the necessary information to create the thing you defined
 
 2. Part of the C code listing with syntax highlighting, which toggles LEDs only if push button is pressed. Otherwise, the value of the LEDs does not change. Use function from your GPIO library. Let the push button is connected to port D:
 
