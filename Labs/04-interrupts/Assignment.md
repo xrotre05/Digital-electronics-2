@@ -1,8 +1,8 @@
-# Lab 4: YOUR_FIRSTNAME FAMILYNAME
+# Lab 4: Rotrekl 
 
 Link to your `Digital-electronics-2` GitHub repository:
 
-   [https://github.com/...](https://github.com/...)
+   [https://github.com/xrotre05/Digital-electronics-2](https://github.com/xrotre05/Digital-electronics-2)
 
 
 ### Overflow times
@@ -11,9 +11,10 @@ Link to your `Digital-electronics-2` GitHub repository:
 
 | **Module** | **Number of bits** | **1** | **8** | **32** | **64** | **128** | **256** | **1024** |
 | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: | :-: |
-| Timer/Counter0 | 8  | 16u | 128u | -- | | -- | | |
-| Timer/Counter1 | 16 |     |      | -- | | -- | | |
-| Timer/Counter2 | 8  |     |      |    | |    | | |
+| Timer/Counter0 | 8  | 16u | 128u | -- | 1024u | -- | 4096u | 16,38m |
+| Timer/Counter1 | 16 | 4096u | 32,77m | -- | 262,1m | -- | 1,048s | 4,194s |
+| Timer/Counter2 | 8  | 16u | 128u |  512u  | 1024u | 2048u | 4096u | 16,38m |
+
 
 
 ### Timer library
