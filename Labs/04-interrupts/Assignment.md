@@ -1,4 +1,4 @@
-# Lab 4: Rotrekl 
+# Lab 4: Tomas Rotrekl 
 
 Link to your `Digital-electronics-2` GitHub repository:
 
