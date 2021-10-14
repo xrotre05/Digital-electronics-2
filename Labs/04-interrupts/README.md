@@ -34,15 +34,15 @@ Shields are boards that can be attached to an Arduino board, significantly expan
 | :-: | :-- | :-- | :-- |
 | 0x0000 | RESET | -- | Reset of the system |
 | 0x0002 | INT0  | `INT0_vect`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | External interrupt request number 0&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
-| 0x0004 | INT1 |  |  |
-| 0x0006 | PCINT0 |  |  |
-| 0x0008 | PCINT1 |  |  |
-| 0x000A | PCINT2 |  |  |
-| 0x000C | WDT |  |  |
-| 0x0012 | TIMER2_OVF |  |  |
+| 0x0004 | INT1 |  | External interrupt request number 1 |
+| 0x0006 | PCINT0 |  | Pin change interrupt request number 0 |
+| 0x0008 | PCINT1 |  | Pin change interrupt request number 1 |
+| 0x000A | PCINT2 |  | Pin change interrupt request number 2 |
+| 0x000C | WDT |  | Watchdog time-out interrupt |
+| 0x0012 | TIMER2_OVF |  | Timer/Counter2 overflow |
 | 0x0018 | TIMER1_COMPB | `TIMER1_COMPB_vect` | Compare match between Timer/Counter1 value and channel B compare value |
 | 0x001A | TIMER1_OVF | `TIMER1_OVF_vect` | Overflow of Timer/Counter1 value |
-| 0x0020 | TIMER0_OVF |  |  |
-| 0x0024 | USART_RX |  |  |
-| 0x002A | ADC |  |  |
-| 0x0030 | TWI |  |  |
+| 0x0020 | TIMER0_OVF |  | Timer/Counter0 overflow |
+| 0x0024 | USART_RX |  | USART Rx complete |
+| 0x002A | ADC |  | ADC conversion complete |
+| 0x0030 | TWI |  | 2-wire serial interface |
