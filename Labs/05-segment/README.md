@@ -25,4 +25,5 @@
 3. Use schematic of the [Multi-function shield](../../Docs/arduino_shield.pdf) and find out the connection of seven-segment display. What is the purpose of two shift registers 74HC595?
 
 There are 2 registers, 1 for writing the number second for its position on the display.
-[7seg](https://github.com/xrotre05/Digital-electronics-2/blob/main/Labs/05-segment/7seg.PNG)
+
+![7seg](https://github.com/xrotre05/Digital-electronics-2/blob/main/Labs/05-segment/7seg.PNG)
