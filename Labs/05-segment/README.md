@@ -1,3 +1,5 @@
+# Lab 5: Display devices, 7-segment display
+
 ## Preparation tasks (done before the lab at home)
 
 1. Read the [7-segment display tutorial](https://www.electronics-tutorials.ws/blog/7-segment-display-tutorial.html) and find out what is the difference between:
