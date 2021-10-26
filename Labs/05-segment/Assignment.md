@@ -20,7 +20,22 @@ Link to your `Digital-electronics-2` GitHub repository:
  **********************************************************************/
 ISR(TIMER1_OVF_vect)
 {
-    // WRITE YOUR CODE HERE
+    static uint16_t i=0;
+	static uint16_t j=0;
+
+	if (i==9){
+		i=0;
+		j++;
+		
+		if (j==6){
+			j=0;
+		}
+		
+	}
+	else{
+	i++;	
+	} 
+	
 
 }
 ```
@@ -31,11 +46,33 @@ ISR(TIMER1_OVF_vect)
  * Purpose:  Display tens and units of a counter at SSD.
  **********************************************************************/
 ISR(TIMER0_OVF_vect)
+ISR(TIMER0_OVF_vect)
 {
-    static uint8_t pos = 0;
-
-    // WRITE YOUR CODE HERE
-
+	static uint8_t pos = 0;  // This line will only run the first time
+			
+	switch (pos)
+	{
+		case 0:
+			SEG_update_shift_regs(i, pos);
+			break;
+		case 1:
+			SEG_update_shift_regs(j, pos);
+			break;
+		
+		case 2:
+			SEG_update_shift_regs(0, pos);
+			break;
+		
+		case 3:
+			SEG_update_shift_regs(0, pos);
+			break;
+		case 4:
+			pos=0;
+		break;
+		
+	}
+	pos++;
+	
 }
 ```
 
