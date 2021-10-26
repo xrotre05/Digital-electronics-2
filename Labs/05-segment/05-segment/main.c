@@ -29,12 +29,15 @@ int main(void)
 
     // Test of SSD: display number '3' at position 0
     //SEG_update_shift_regs(0b00001101, 0b00010000);
-    SEG_update_shift_regs(3, 0);
+    //SEG_update_shift_regs(0, 0);
     
     // Configure 16-bit Timer/Counter1 for Decimal counter
     // Set the overflow prescaler to 262 ms and enable interrupt
     TIM1_overflow_262ms()
     TIM1_overflow_interrupt_enable()
+	
+	TIM0_overflow_4ms()
+	TIM0_overflow_interrupt_enable()
     // Enables interrupts by setting the global interrupt mask
     sei();
 
@@ -56,6 +59,57 @@ int main(void)
  **********************************************************************/
 ISR(TIMER1_OVF_vect)
 {
-    // WRITE YOUR CODE HERE
+    static uint16_t i=0;
+	static uint16_t j=0;
 
+	if (i==9){
+		i=0;
+		j++;
+		
+		if (j==6){
+			j=0;
+		}
+		
+	}
+	else{
+	i++;	
+	} 
+	
+
+}
+
+/**********************************************************************
+ * Function: Timer/Counter0 overflow interrupt
+ * Purpose:  Display tens and units of a counter at SSD.
+ **********************************************************************/
+ISR(TIMER0_OVF_vect)
+{
+	static uint8_t pos = 0;  // This line will only run the first time
+					
+	switch (pos)
+	{
+		case 0:
+			SEG_update_shift_regs(i, pos);
+			break;
+		case 1:
+			SEG_update_shift_regs(j, pos);
+			break;
+		
+		case 2:
+			SEG_update_shift_regs(0, pos);
+			break;
+		
+		case 3:
+			SEG_update_shift_regs(0, pos);
+			break;
+		case 4:
+			pos=0;
+			break;
+		
+		default:
+			pos=0;
+		
+	}
+	pos++;
+	
 }
