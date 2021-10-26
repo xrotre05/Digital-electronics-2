@@ -70,6 +70,8 @@ ISR(TIMER0_OVF_vect)
 			pos=0;
 		break;
 		
+		default:
+			pos=0;
 	}
 	pos++;
 	
