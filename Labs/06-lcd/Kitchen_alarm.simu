@@ -2,11 +2,11 @@
 
 Unique  Id: Ground-513: 
 Circuit Id: Ground-513
-<item id="Ground-513" vflip="1" mainComp="false" Show_id="false" boardRot="-1000000" valLabelx="0" labely="8" hflip="1" labelrot="0" boardPos="-1e+06,-1e+06" labelx="-16" circPos="0,0" x="-808" valLabely="0" valLabRot="0" objectName="Ground-513" rotation="0" y="-212" itemtype="Ground" circRot="nan"/>
+<item id="Ground-513" vflip="1" mainComp="false" Show_id="false" boardRot="-1000000" valLabelx="0" labely="8" hflip="1" labelrot="0" boardPos="-1e+06,-1e+06" labelx="-16" circPos="0,0" x="-648" valLabely="0" valLabRot="0" objectName="Ground-513" rotation="0" y="-212" itemtype="Ground" circRot="nan"/>
 
 Unique  Id: Hd44780-512: 
 Circuit Id: Hd44780-512
-<item id="Hd44780-512" vflip="1" mainComp="false" Show_id="true" boardRot="-1000000" valLabelx="0" labely="-82" Rows="2" hflip="1" labelrot="0" boardPos="-1e+06,-1e+06" labelx="70" circPos="0,0" x="-832" valLabely="0" valLabRot="0" objectName="Hd44780-512" rotation="0" Cols="16" y="-252" itemtype="Hd44780" circRot="0"/>
+<item id="Hd44780-512" vflip="1" mainComp="false" Show_id="true" boardRot="-1000000" valLabelx="0" labely="-82" Rows="2" hflip="1" labelrot="0" boardPos="-1e+06,-1e+06" labelx="70" circPos="0,0" x="-672" valLabely="0" valLabRot="0" objectName="Hd44780-512" rotation="0" Cols="16" y="-256" itemtype="Hd44780" circRot="0"/>
 
 Unique  Id: Ground-140: 
 Circuit Id: Ground-140
@@ -134,30 +134,30 @@ Circuit Id: Connector-340
 
 Unique  Id: Connector-514: 
 Circuit Id: Connector-514
-<item pointList="-808,-244,-808,-228" id="Connector-514" vflip="1" mainComp="false" Show_id="false" boardRot="-1000000" valLabelx="0" labely="-24" startpinid="Hd44780-512-PinRW" hflip="1" labelrot="0" boardPos="-1e+06,-1e+06" labelx="-16" circPos="0,0" x="-808" valLabely="0" valLabRot="0" objectName="Connector-514" rotation="0" y="-244" itemtype="Connector" endpinid="Ground-513-Gnd" enodeid="enode-514" circRot="0"/>
+<item pointList="-648,-248,-648,-228" id="Connector-514" vflip="1" mainComp="false" Show_id="false" boardRot="-1000000" valLabelx="0" labely="-24" startpinid="Hd44780-512-PinRW" hflip="1" labelrot="0" boardPos="-1e+06,-1e+06" labelx="-16" circPos="0,0" x="-648" valLabely="0" valLabRot="0" objectName="Connector-514" rotation="0" y="-248" itemtype="Connector" endpinid="Ground-513-Gnd" enodeid="enode-514" circRot="0"/>
 
 Unique  Id: Connector-517: 
 Circuit Id: Connector-517
-<item pointList="-520,-176,-760,-176,-760,-244" id="Connector-517" vflip="1" mainComp="false" Show_id="false" boardRot="-1000000" valLabelx="0" labely="-24" startpinid="atmega328-4-PD4" hflip="1" labelrot="0" boardPos="-1e+06,-1e+06" labelx="-16" circPos="0,0" x="-520" valLabely="0" valLabRot="0" objectName="Connector-517" rotation="0" y="-176" itemtype="Connector" endpinid="Hd44780-512-dataPin4" enodeid="enode-517" circRot="0"/>
+<item pointList="-520,-176,-600,-176,-600,-248" id="Connector-517" vflip="1" mainComp="false" Show_id="false" boardRot="-1000000" valLabelx="0" labely="-24" startpinid="atmega328-4-PD4" hflip="1" labelrot="0" boardPos="-1e+06,-1e+06" labelx="-16" circPos="0,0" x="-520" valLabely="0" valLabRot="0" objectName="Connector-517" rotation="0" y="-176" itemtype="Connector" endpinid="Hd44780-512-dataPin4" enodeid="enode-517" circRot="0"/>
 
 Unique  Id: Connector-518: 
 Circuit Id: Connector-518
-<item pointList="-752,-244,-752,-136,-520,-136" id="Connector-518" vflip="1" mainComp="false" Show_id="false" boardRot="-1000000" valLabelx="0" labely="-24" startpinid="Hd44780-512-dataPin5" hflip="1" labelrot="0" boardPos="-1e+06,-1e+06" labelx="-16" circPos="0,0" x="-752" valLabely="0" valLabRot="0" objectName="Connector-518" rotation="0" y="-244" itemtype="Connector" endpinid="atmega328-4-PD5" enodeid="enode-518" circRot="0"/>
+<item pointList="-592,-248,-592,-136,-520,-136" id="Connector-518" vflip="1" mainComp="false" Show_id="false" boardRot="-1000000" valLabelx="0" labely="-24" startpinid="Hd44780-512-dataPin5" hflip="1" labelrot="0" boardPos="-1e+06,-1e+06" labelx="-16" circPos="0,0" x="-592" valLabely="0" valLabRot="0" objectName="Connector-518" rotation="0" y="-248" itemtype="Connector" endpinid="atmega328-4-PD5" enodeid="enode-518" circRot="0"/>
 
 Unique  Id: Connector-519: 
 Circuit Id: Connector-519
-<item pointList="-520,-128,-744,-128,-744,-244" id="Connector-519" vflip="1" mainComp="false" Show_id="false" boardRot="-1000000" valLabelx="0" labely="-24" startpinid="atmega328-4-PD6" hflip="1" labelrot="0" boardPos="-1e+06,-1e+06" labelx="-16" circPos="0,0" x="-520" valLabely="0" valLabRot="0" objectName="Connector-519" rotation="0" y="-128" itemtype="Connector" endpinid="Hd44780-512-dataPin6" enodeid="enode-519" circRot="0"/>
+<item pointList="-520,-128,-584,-128,-584,-248" id="Connector-519" vflip="1" mainComp="false" Show_id="false" boardRot="-1000000" valLabelx="0" labely="-24" startpinid="atmega328-4-PD6" hflip="1" labelrot="0" boardPos="-1e+06,-1e+06" labelx="-16" circPos="0,0" x="-520" valLabely="0" valLabRot="0" objectName="Connector-519" rotation="0" y="-128" itemtype="Connector" endpinid="Hd44780-512-dataPin6" enodeid="enode-519" circRot="0"/>
 
 Unique  Id: Connector-520: 
 Circuit Id: Connector-520
-<item pointList="-736,-244,-736,-120,-520,-120" id="Connector-520" vflip="1" mainComp="false" Show_id="false" boardRot="-1000000" valLabelx="0" labely="-24" startpinid="Hd44780-512-dataPin7" hflip="1" labelrot="0" boardPos="-1e+06,-1e+06" labelx="-16" circPos="0,0" x="-736" valLabely="0" valLabRot="0" objectName="Connector-520" rotation="0" y="-244" itemtype="Connector" endpinid="atmega328-4-PD7" enodeid="enode-520" circRot="0"/>
+<item pointList="-576,-248,-576,-120,-520,-120" id="Connector-520" vflip="1" mainComp="false" Show_id="false" boardRot="-1000000" valLabelx="0" labely="-24" startpinid="Hd44780-512-dataPin7" hflip="1" labelrot="0" boardPos="-1e+06,-1e+06" labelx="-16" circPos="0,0" x="-576" valLabely="0" valLabRot="0" objectName="Connector-520" rotation="0" y="-248" itemtype="Connector" endpinid="atmega328-4-PD7" enodeid="enode-520" circRot="0"/>
 
 Unique  Id: Connector-529: 
 Circuit Id: Connector-529
-<item pointList="-800,-244,-800,-92,-456,-92,-456,-112,-472,-112" id="Connector-529" vflip="1" mainComp="false" Show_id="false" boardRot="-1000000" valLabelx="0" labely="-24" startpinid="Hd44780-512-PinEn" hflip="1" labelrot="0" boardPos="-1e+06,-1e+06" labelx="-16" circPos="0,0" x="-800" valLabely="0" valLabRot="0" objectName="Connector-529" rotation="0" y="-244" itemtype="Connector" endpinid="atmega328-4-PB1" enodeid="enode-529" circRot="0"/>
+<item pointList="-640,-248,-640,-92,-456,-92,-456,-112,-472,-112" id="Connector-529" vflip="1" mainComp="false" Show_id="false" boardRot="-1000000" valLabelx="0" labely="-24" startpinid="Hd44780-512-PinEn" hflip="1" labelrot="0" boardPos="-1e+06,-1e+06" labelx="-16" circPos="0,0" x="-640" valLabely="0" valLabRot="0" objectName="Connector-529" rotation="0" y="-248" itemtype="Connector" endpinid="atmega328-4-PB1" enodeid="enode-529" circRot="0"/>
 
 Unique  Id: Connector-530: 
 Circuit Id: Connector-530
-<item pointList="-520,-112,-816,-112,-816,-244" id="Connector-530" vflip="1" mainComp="false" Show_id="false" boardRot="-1000000" valLabelx="0" labely="-24" startpinid="atmega328-4-PB0" hflip="1" labelrot="0" boardPos="-1e+06,-1e+06" labelx="-16" circPos="0,0" x="-520" valLabely="0" valLabRot="0" objectName="Connector-530" rotation="0" y="-112" itemtype="Connector" endpinid="Hd44780-512-PinRS" enodeid="enode-530" circRot="0"/>
+<item pointList="-520,-112,-656,-112,-656,-248" id="Connector-530" vflip="1" mainComp="false" Show_id="false" boardRot="-1000000" valLabelx="0" labely="-24" startpinid="atmega328-4-PB0" hflip="1" labelrot="0" boardPos="-1e+06,-1e+06" labelx="-16" circPos="0,0" x="-520" valLabely="0" valLabRot="0" objectName="Connector-530" rotation="0" y="-112" itemtype="Connector" endpinid="Hd44780-512-PinRS" enodeid="enode-530" circRot="0"/>
  
 </circuit>
