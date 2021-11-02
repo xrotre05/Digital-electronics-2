@@ -8,7 +8,7 @@ Link to this file in your GitHub repository:
 ### LCD display module
 
 1. In your words, describe what ASCII table is.
-   * ASCII table:
+   * ASCII table: table of characters in which each character can be represented by hex or dec number
 
 2. (Hand-drawn) picture of time signals between ATmega328P and LCD keypad shield (HD44780 driver) when transmitting three character data `De2`.
 
