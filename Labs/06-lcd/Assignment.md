@@ -30,8 +30,23 @@ Link to this file in your GitHub repository:
 /* Variables ---------------------------------------------------------*/
 // Custom character definition
 uint8_t customChar[16] = {
-    // WRITE YOUR CODE HERE
-
+	0b01010,
+	0b01010,
+	0b01110,
+	0b00000,
+	0b00000,
+	0b01110,
+	0b01010,
+	0b01010,
+  
+	0b00000,
+	0b10000,
+	0b01000,
+	0b00100,
+	0b00010,
+	0b00100,
+	0b01000,
+	0b10000
 };
 ```
 
