@@ -19,7 +19,7 @@ Link to this file in your GitHub repository:
 
 1. Flowchart figure for `TIMER2_OVF_vect` interrupt service routine which overflows every 16&nbsp;ms but it updates the stopwatch LCD approximately every 100&nbsp;ms (6 x 16&nbsp;ms = 100&nbsp;ms). Display tenths of a second and seconds `00:seconds.tenths`. Let the stopwatch counts from `00:00.0` to `00:59.9` and then starts again. The image can be drawn on a computer or by hand. Use clear descriptions of the individual steps of the algorithms.
 
-   ![your figure]()
+   ![flow](https://github.com/xrotre05/Digital-electronics-2/blob/main/Labs/06-lcd/diag.drawio.png)
 
 
 ### Custom characters
@@ -57,4 +57,4 @@ Consider a kitchen alarm with an LCD, one LED and three push buttons: start, +1 
 
 1. Scheme of kitchen alarm; do not forget the supply voltage. The image can be drawn on a computer or by hand. Always name all components and their values.
 
-   ![your figure]()
+   ![alarm](https://github.com/xrotre05/Digital-electronics-2/blob/main/Labs/06-lcd/Kitchen_alarm.simu)
