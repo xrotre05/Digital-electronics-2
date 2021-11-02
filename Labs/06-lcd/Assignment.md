@@ -2,7 +2,7 @@
 
 Link to this file in your GitHub repository:
 
-[https://github.com/xrotre05/Digital-electronics-2](https://github.com/xrotre05/Digital-electronics-2)
+[https://github.com/xrotre05/Digital-electronics-2/tree/main/Labs/06-lcd](https://github.com/xrotre05/Digital-electronics-2/tree/main/Labs/06-lcd)
 
 
 ### LCD display module
