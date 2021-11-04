@@ -48,7 +48,7 @@
    | :-: | :-: | :-: | :-: |
    | Right  | 0&nbsp;V | 0   |  |
    | Up     | 0.495&nbsp;V | 101 |  |
-   | Down   |       |     |  |
-   | Left   |       |     |  |
-   | Select |       |     |  |
-   | none   |       |     |  |
+   | Down   | 1,202&nbsp;V | 246 |  |
+   | Left   | 1,970&nbsp;V | 403 |  |
+   | Select | 3,182&nbsp;V | 621 |  |
+   | none   | 5&nbsp;V     | 1023 |  |
