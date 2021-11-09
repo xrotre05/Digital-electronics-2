@@ -1,21 +1,21 @@
-# Lab 7: YOUR_FIRSTNAME LASTNAME
+# Lab 7: Tomas Rotrekl
 
 Link to this file in your GitHub repository:
 
-[https://github.com/your-github-account/repository-name/lab_name](https://github.com/...)
+[https://github.com/xrotre05/Digital-electronics-2/edit/main/Labs/07-uart/Assignment.md](https://github.com/xrotre05/Digital-electronics-2/edit/main/Labs/07-uart/Assignment.md)
 
 ### Analog-to-Digital Conversion
 
 1. Complete table with voltage divider, calculated, and measured ADC values for all five push buttons.
 
-   | **Push button** | **PC0[A0] voltage** | **ADC value (calculated)** | **ADC value (measured)** |
+ | **Push button** | **PC0[A0] voltage** | **ADC value (calculated)** | **ADC value (measured)** |
    | :-: | :-: | :-: | :-: |
    | Right  | 0&nbsp;V | 0   |  |
    | Up     | 0.495&nbsp;V | 101 |  |
-   | Down   |       |     |  |
-   | Left   |       |     |  |
-   | Select |       |     |  |
-   | none   |       |     |  |
+   | Down   | 1,202&nbsp;V | 246 |  |
+   | Left   | 1,970&nbsp;V | 403 |  |
+   | Select | 3,182&nbsp;V | 621 |  |
+   | none   | 5&nbsp;V     | 1023 |  |
 
 2. Code listing of ACD interrupt service routine for sending data to the LCD/UART and identification of the pressed button. Always use syntax highlighting and meaningful comments:
 
