@@ -67,8 +67,8 @@ int main(void)
         /* Empty loop. All subsequent operations are performed exclusively 
          * inside interrupt service routines ISRs */
         
-        uart_puts("hello");
-        uart_putc('\n');
+        //uart_puts(lcd_string);
+       // uart_putc('\n');
     }
 
     // Will never reach this
@@ -95,12 +95,22 @@ ISR(ADC_vect)
 {
     uint16_t value = 0;
     char lcd_string[4] = "0000";
-
-    value = ADC;                  // Copy ADC result to 16-bit variable
+	
+    value = ADC;					// Copy ADC result to 16-bit variable                  
     itoa(value, lcd_string, 10);  // Convert decimal value to string
 
-    lcd_gotoxy(8, 0); 
-    lcd_puts(lcd_string);
+    lcd_gotoxy(8, 0);			// move cursor to 8,0
+    lcd_puts(lcd_string);		// print lcd_string to LCD
+	
+	uart_puts(lcd_string);	    // print lcd_string to UART			
+	
+	itoa(value, lcd_string, 16);	// Convert hex value to string
+	lcd_gotoxy(13, 0);				// move cursor to 13,0
+	lcd_puts(lcd_string);			// print lcd_string to LCD
+	
+	uart_puts("  ");				// print space to UART
+	uart_puts(lcd_string);			// print lcd_string to UART	
+	uart_putc('\n');				// print to next column to UART
     /*
     uart_puts(lcd_string);
     uart_puts("\n\r");
