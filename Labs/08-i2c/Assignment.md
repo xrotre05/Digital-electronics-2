@@ -1,20 +1,22 @@
-# Lab 8: YOUR_FIRSTNAME LASTNAME
+# Lab 8: Tomas Rotrekl
 
 Link to this file in your GitHub repository:
 
-[https://github.com/your-github-account/repository-name/lab_name](https://github.com/...)
+[https://github.com/xrotre05/Digital-electronics-2/blob/main/Labs/08-i2c/Assignment.md)
 
 ### Arduino Uno pinout
 
 1. In the picture of the Arduino Uno board, mark the pins that can be used for the following functions:
-   * PWM generators from Timer0, Timer1, Timer2
-   * analog channels for ADC
-   * UART pins
-   * I2C pins
-   * SPI pins
-   * external interrupt pins INT0, INT1
+   * PWM generators from Timer0:  PD6, PD5, PD3  
+   * PWM generators from Timer1:  PB1, PB2
+   * PWM generators from Timer2:  PB3 
+   * analog channels for ADC:     PC0:5 
+   * UART pins:                   PD0, PD1, PD4
+   * I2C pins:                    PC4:5
+   * SPI pins:                    PB2:5
+   * external interrupt pins:      INT0, INT1
 
-   ![your figure](Images/arduino_uno_pinout.png)
+   ![your figure](https://github.com/tomas-fryza/Digital-electronics-2/blob/master/Labs/08-i2c/Images/arduino_uno_pinout.png)
 
 ### I2C
 
@@ -40,7 +42,11 @@ ISR(TIMER1_OVF_vect)
     case STATE_IDLE:
         addr++;
         // If slave address is between 8 and 119 then move to SEND state
-
+        if ((addr > 7)&&(addr <120)){
+            
+            state = STATE_SEND;
+        }      
+        
         break;
     
     // Transmit I2C slave address and get result
@@ -56,13 +62,23 @@ ISR(TIMER1_OVF_vect)
         twi_stop();
         /* Test result from I2C bus. If it is 0 then move to ACK state, 
          * otherwise move to IDLE */
-
+        if (result==0){
+           state= STATE_ACK;    
+        }
+        else{
+            state=STATE_IDLE;   
+        }
+        
         break;
 
     // A module connected to the bus was found
     case STATE_ACK:
         // Send info about active I2C slave to UART and move to IDLE
-
+        itoa(addr,uart_string,16);  // convert addr to hex string 
+        uart_puts(uart_string);		  // write add to uart as string 
+        uart_putc('\n');			      // new line
+        uart_putc('\r');			      // carriage retur
+        state= STATE_IDLE;
         break;
 
     // If something unexpected happens then move to IDLE
@@ -75,7 +91,7 @@ ISR(TIMER1_OVF_vect)
 
 2. (Hand-drawn) picture of I2C signals when reading checksum (only 1 byte) from DHT12 sensor. Indicate which specific moments control the data line master and which slave.
 
-   ![your figure]()
+   ![your figure](https://github.com/xrotre05/Digital-electronics-2/blob/main/Labs/08-i2c/checksum.jpg)
 
 ### Meteo station
 
@@ -83,4 +99,4 @@ Consider an application for temperature and humidity measurement and display. Us
 
 1. FSM state diagram picture of meteo station. The image can be drawn on a computer or by hand. Concise name of individual states and describe the transitions between them.
 
-   ![your figure]()
+   ![your figure](https://github.com/xrotre05/Digital-electronics-2/blob/main/Labs/08-i2c/temp.drawio.png)
