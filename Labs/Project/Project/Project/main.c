@@ -7,10 +7,9 @@
 
 /* Defines -----------------------------------------------------------*/
 
-#define TRIGGER		PB4		
-#define ECHO		PB5
+#define TRIGGER		PB5
+#define ECHO		PD6
 #define DELAY		1
-#define PUMP		PB3
 
 #ifndef F_CPU
 # define F_CPU 16000000  // CPU frequency in Hz required for UART_BAUD_SELECT
@@ -23,8 +22,6 @@
 #include "timer.h"          // Timer library for AVR-GCC
 #include <stdlib.h>         // C library. Needed for conversion function
 #include "uart.h"           // Peter Fleury's UART library
-#include "twi.h"            // TWI library for AVR-GCC
-#include "lcd.h"            // Peter Fleury's LCD library
 #include "gpio.h"
 #include <util/delay.h>     // Functions for busy-wait delay loops
 #include <string.h>
@@ -33,52 +30,35 @@ int TimerOverflow = 0;
 
 int main(void)
 {
-     char string[10];
-     long count;
-     double distance;
-	 
+     
 	 //input output setup
      
      GPIO_config_output(&DDRB, TRIGGER);
      GPIO_write_low(&PORTB, TRIGGER);
      //PORTB = PORTB & ~(1<<LED_INT);
      //DDRB = DDRB | (1<<LED_INT);
-	 
-	 GPIO_config_input_pullup(&DDRB, ECHO);
-	 
-	 //PORTB = PORTB & ~(1<<LED_INT);
-	 //DDRB = DDRB | (1<<LED_INT);
-	 
-	 GPIO_config_output(&DDRB, PUMP);
-	 GPIO_write_low(&PORTB, PUMP);
-	 //PORTB = PORTB & ~(1<<LED_INT);
-	 //DDRB = DDRB | (1<<LED_INT);
-	
-	
-	// Initialize LCD display
-	lcd_init(LCD_DISP_ON);
-	lcd_gotoxy(1, 0); lcd_puts("level:");
-	lcd_gotoxy(3, 1); lcd_puts("state:");
-	lcd_gotoxy(8, 0); lcd_puts("a");    // Put ADC value in decimal
-	lcd_gotoxy(8, 1); lcd_puts("b");    // Put button name here
-	
-	// Initialize I2C (TWI)
-    twi_init();
+
+	GPIO_config_input_pullup(&DDRD,ECHO);
+	//PORTD = 0xFF;		/* Turn on Pull-up */
 
     // Initialize UART to asynchronous, 8N1, 9600
     uart_init(UART_BAUD_SELECT(9600, F_CPU));
 
-    // Configure 16-bit Timer/Counter0 to update FSM
-    // Set prescaler to 1 s and enable interrupt
-    TIM0_overflow_1s();
-    TIM0_overflow_interrupt_enable();
-
-	TIM1_stop();
+    // Configure 16-bit Timer/Counter1
+	// we need to use Timer/Counter1 because it is the only one which has input capture mode
+    
+	// Enables interrupts by setting the global interrupt mask
+	sei();	
+	//Enable overflow interrupt
 	TIM1_overflow_interrupt_enable();
-    // Enables interrupts by setting the global interrupt mask
-    sei();
+	// Set prescaler to 4 ms 
+    
 
-
+	char string[10];
+	long count;
+	double distance;
+	
+	
     // Infinite loop
     while (1)
     {
@@ -88,16 +68,22 @@ int main(void)
 		_delay_us(10);
 		GPIO_write_low(&PORTB, TRIGGER);
 		
-		TCNT1 = 0;		/* Clear Timer counter */
-		TCCR1B = 0x41;	/* Capture on rising edge, No prescaler*/
+		TCNT1 = 0;				/* Clear Timer counter */	
+			//TCCR1B = 0x41;		/* Capture on rising edge, No prescaler*/
+		TIM1_overflow_4ms();
+		TCCR1B = 1<<ICES1;
+		//
+		
 		TIFR1 = 1<<ICF1;	/* Clear ICP flag (Input Capture flag) */
 		TIFR1 = 1<<TOV1;	/* Clear Timer Overflow flag */
 		
 		/*Calculate width of Echo by Input Capture (ICP) */
 		
 		while ((TIFR1 & (1 << ICF1)) == 0);/* Wait for rising edge */
-		TCNT1 = 0;	/* Clear Timer counter */
-		TCCR1B = 0x01;	/* Capture on falling edge, No prescaler */
+		TCNT1 = 0;			/* Clear Timer counter */
+			//TCCR1B = 0x01;		/* Capture on falling edge, No prescaler */
+		TCCR1B = 0<<ICES1;
+		//
 		TIFR1 = 1<<ICF1;	/* Clear ICP flag (Input Capture flag) */
 		TIFR1 = 1<<TOV1;	/* Clear Timer Overflow flag */
 		TimerOverflow = 0;/* Clear Timer overflow count */
@@ -110,12 +96,12 @@ int main(void)
 		dtostrf(distance, 2, 2, string);/* distance to string */
 		strcat(string, " cm   ");	/* Concat unit i.e.cm */
 		
-		lcd_gotoxy(8, 0); 
-		lcd_puts(string);	/* Print distance */
+		/* Print distance */
 		uart_puts(string);
 		uart_putc('\n');
 		uart_putc('\r');
 		_delay_ms(200);
+		//PD6 echo
     }
 
     // Will never reach this
