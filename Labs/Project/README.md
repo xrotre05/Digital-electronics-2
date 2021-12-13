@@ -8,7 +8,7 @@
 
 Link to this file in your GitHub repository:
 
-[https://github.com/your-github-account/repository-name/project](https://github.com/...)
+[https://github.com/xrotre05/Digital-electronics-2/blob/main/Labs/Project/README.md](https://github.com/xrotre05/Digital-electronics-2/blob/main/Labs/Project/README.md)
 
 ### Table of contents
 
