@@ -1,11 +1,10 @@
-# YOUR_PROJECT_TITLE
+# Water tank controller
 
 ### Team members
 
-* Member 1 (responsible for xxx)
-* Member 2 (responsible for xxx)
-* Member 3 (responsible for xxx)
-* ...
+* Jan Rajm (responsible for xxx)
+* Tomáš Rotrekl (responsible for xxx)
+* Martin Šomšák (responsible for xxx)
 
 Link to this file in your GitHub repository:
 
